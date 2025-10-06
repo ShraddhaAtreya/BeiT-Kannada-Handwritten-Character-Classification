@@ -36,3 +36,20 @@ Framework: PyTorch with timm library v0.9.x
 Input Resolution: 224×224×3
 Output: 621 classes (softmax)
 Parameters: 86,239,533 (all trainable)
+
+
+**Training Configuration**
+
+pythonOptimizer: AdamW
+
+Learning Rate: 5e-5 (initial, adjusted for BeiT)
+
+Weight Decay: 0.05
+
+Scheduler: CosineAnnealingLR
+  - T_max: 7 epochs
+  - Min LR: 1e-6
+Batch Size: 32
+Epochs: 7
+Loss Function: CrossEntropyLoss
+Device: CUDA (Tesla P100-PCIE-16GB)
